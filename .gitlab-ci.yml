@@ -1,0 +1,4 @@
+include:
+  - project: 'edouardpeyrot/sf-gen-ci-ref'
+    ref: main
+    file: '/.gitlab-template.yml'

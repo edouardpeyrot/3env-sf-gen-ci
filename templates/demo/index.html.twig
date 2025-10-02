@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demo index{% endblock %}
+
+{% block body %}
+    <h1>Demo index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Demo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demo in demos %}
+            <tr>
+                <td>{{ demo.id }}</td>
+                <td>{{ demo.demo }}</td>
+                <td>
+                    <a href="{{ path('demo_show', {'id': demo.id}) }}">show</a>
+                    <a href="{{ path('demo_edit', {'id': demo.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('demo_new') }}">Create new</a>
+{% endblock %}
